@@ -21,16 +21,12 @@ A commandline addressbook. The main goals are:
 
 ## Installation
 
-On ArchLinux, simply use the
-[mates-git](https://aur.archlinux.org/packages/mates-git/) package from the
-AUR.
-
 For a manual installation, you need to have [Rust](http://www.rust-lang.org/)
 and [Cargo](https://crates.io/) installed. Both 1.0 and the nightlies should
 work.
 
-1. `cargo install mates` (or `cargo install --git
-   https://github.com/untitaker/mates.rs` to install the dev version)
+1. `cargo install mates-rs` (or `cargo install --git
+   https://github.com/shalzz/mates.rs` to install the dev version)
 2. Add `~/.cargo/bin/` to your path. The binary inside it doesn't depend on
    either Rust or Cargo, just `glibc` and `grep`.
 
@@ -62,6 +58,16 @@ responsiveness massively.
 
 
 ## Integration
+
+### Aerc
+
+#### Query
+
+Specify the `address-book-cmd` in the `aerc.conf`
+
+```config
+address-book-cmd= mates mutt-query --disable-empty-line %s
+```
 
 ### Mutt
 
