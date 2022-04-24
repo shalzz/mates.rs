@@ -1,5 +1,5 @@
 [package]
-name = "mates"
+name = "mates-rs"
 version = "1.0.0"
 authors = ["Markus Unterwaditzer <markus@unterwaditzer.net>", "Shaleen Jain <shaleen@jain.sh>"]
 license = "MIT"
@@ -12,6 +12,10 @@ homepage = "https://github.com/untitaker/mates.rs"
 repository = "https://github.com/untitaker/mates.rs"
 
 edition = "2018"
+
+[[bin]]
+name = "mates"
+path = "src/main.rs"
 
 [dependencies]
 uuid = { version = "0.5", features = ["v4"] }

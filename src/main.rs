@@ -5,8 +5,8 @@ use clap::{Arg, Command};
 use std::io;
 use std::io::Read;
 
-use mates::cli;
-use mates::utils;
+use mates_rs::cli;
+use mates_rs::utils;
 
 fn main() -> Result<()> {
     let app = Command::new("mates")
