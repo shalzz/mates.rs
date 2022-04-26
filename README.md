@@ -1,6 +1,8 @@
 # Mates
 
 [![Build status](https://travis-ci.org/pimutils/mates.rs.svg?branch=master)](https://travis-ci.org/pimutils/mates.rs)
+[![Crates.io](https://img.shields.io/crates/d/mates-rs)](https://crates.io/crates/mates-rs)
+[![Crates.io](https://img.shields.io/crates/v/mates-rs)](https://crates.io/crates/mates-rs)
 
 A commandline addressbook. The main goals are:
 
