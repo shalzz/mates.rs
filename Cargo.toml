@@ -7,9 +7,9 @@ keywords = ["vdir", "vcard", "contacts", "addressbook"]
 readme = "README.md"
 
 description = "A very simple commandline addressbook"
-documentation = "https://github.com/untitaker/mates.rs"
-homepage = "https://github.com/untitaker/mates.rs"
-repository = "https://github.com/untitaker/mates.rs"
+documentation = "https://github.com/shalzz/mates.rs"
+homepage = "https://github.com/shalzz/mates.rs"
+repository = "https://github.com/shalzz/mates.rs"
 
 edition = "2018"
 
@@ -21,7 +21,7 @@ path = "src/main.rs"
 uuid = { version = "0.5", features = ["v4"] }
 atomicwrites = "0.3"
 email = "0.0"
-clap = "3.1"
+clap = { version = "3.1", features = ["cargo"]}
 vobject = "0.7"
 cursive = "0.17"
 anyhow = "1.0"

@@ -1,6 +1,7 @@
-#[macro_use]
-extern crate anyhow;
+use anyhow::anyhow;
 use anyhow::Result;
+
+use clap::{crate_authors, crate_description, crate_version};
 use clap::{Arg, Command};
 use std::io;
 use std::io::Read;
@@ -10,9 +11,9 @@ use mates_rs::utils;
 
 fn main() -> Result<()> {
     let app = Command::new("mates")
-        .version(env!("CARGO_PKG_VERSION"))
-        .author("Markus Unterwaditzer")
-        .about("A simple commandline addressbook")
+        .version(crate_version!())
+        .author(crate_authors!())
+        .about(crate_description!())
         .subcommand_required(true)
         .subcommand(Command::new("index").about("Rewrite/create the index"))
         .subcommand(

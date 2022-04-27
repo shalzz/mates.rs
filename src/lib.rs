@@ -1,4 +1,3 @@
-#[macro_use]
 extern crate anyhow;
 extern crate atomicwrites;
 extern crate clap;
