@@ -34,13 +34,8 @@ work.
 
 ### Shell completions
 
-Shell completion files are included in the ArchLinux package for Bash, Fish,
-and Zsh. `cargo install` currently does not support installing additional
-files.
-
-If building from source, they will be found in
-`target/release/build/mates-<hash>/out/<shellfile>`.
-
+Shell completion files can be generated at runtime via the `mates completions`
+command.
 
 ## Usage
 
