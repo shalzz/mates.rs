@@ -3,18 +3,24 @@ use anyhow::Result;
 
 use clap::{crate_authors, crate_description, crate_version};
 use clap::{Arg, Command};
+use clap_complete::{generate, Shell};
 use std::io;
 use std::io::Read;
 
 use mates_rs::cli;
 use mates_rs::utils;
 
-fn main() -> Result<()> {
-    let app = Command::new("mates")
+fn build_cli() -> Command<'static> {
+    Command::new("mates")
         .version(crate_version!())
         .author(crate_authors!())
         .about(crate_description!())
         .subcommand_required(true)
+        .subcommand(
+            Command::new("completions")
+                .about("Generate shell completion scripts")
+                .arg(Arg::new("shell").possible_values(Shell::possible_values())),
+        )
         .subcommand(Command::new("index").about("Rewrite/create the index"))
         .subcommand(
             Command::new("mutt-query")
@@ -51,7 +57,10 @@ fn main() -> Result<()> {
                 .about("Open contact (given by filepath or search-string) interactively.")
                 .arg(Arg::new("file-or-query").required(true)),
         )
-        .get_matches();
+}
+
+fn main() -> Result<()> {
+    let app = build_cli().get_matches();
 
     let config = match cli::Configuration::new() {
         Ok(x) => x,
@@ -61,6 +70,10 @@ fn main() -> Result<()> {
     };
 
     match app.subcommand() {
+        Some(("completions", args)) => {
+            let shell = args.value_of_t::<Shell>("shell")?;
+            generate(shell, &mut build_cli(), "mates", &mut io::stdout())
+        }
         Some(("index", _)) => {
             println!(
                 "Rebuilding index file \"{}\"...",
