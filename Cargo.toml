@@ -1,6 +1,6 @@
 [package]
 name = "mates-rs"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Markus Unterwaditzer <markus@unterwaditzer.net>", "Shaleen Jain <shaleen@jain.sh>"]
 license = "MIT"
 keywords = ["vdir", "vcard", "contacts", "addressbook"]
